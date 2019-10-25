@@ -65,10 +65,32 @@ func mapplay() {
 	v, ok := m1[3]
 	fmt.Println(v, ok)
 	m2 := map[int]func(op int) int{}
-	m2[1]=func ()  {
-		
+	m2[1] = func(op int) int { return op }
+	m2[2] = func(op int) int { return op * op }
+	fmt.Println(m2[1](2), m2[2](2))
+
+	myset := map[int]bool{}
+	myset[1] = true
+	n := 1
+	if myset[n] {
+		fmt.Printf("%d is exist\n\r", n)
+	} else {
+		fmt.Printf("%d is not exist\n\r", n)
 	}
 
+}
+func abstring() {
+	var s string
+	fmt.Printf("default string is : %s \n\r", s)
+	s = "hello"
+	fmt.Printf("s len is : %d \n\r", len(s))
+	s = "\xE4\xB8\xA5"
+	fmt.Printf("byte s  print result is : %s \n\r", s)
+	fmt.Printf("s len is : %d \n\r", len(s))
+	s = "中"
+	c := []rune(s)
+	fmt.Printf("中unicod %x\n\r", c[0])
+	fmt.Printf("中 UTF8 %x\n\r", s)
 }
 func main() {
 	datatype()
@@ -76,4 +98,5 @@ func main() {
 	circle()
 	playarray()
 	mapplay()
+	abstring()
 }
