@@ -53,9 +53,27 @@ func playarray() {
 	s2 = append(s2, 1)
 	fmt.Println(s0)
 }
+func mapplay() {
+	m := map[string]int{"one": 1, "two": 2, "three": 3}
+	for i, v := range m {
+		fmt.Println(i, v)
+
+	}
+	fmt.Println(m["one"])
+	m1 := map[int]int{}
+	m1[2] = 3
+	v, ok := m1[3]
+	fmt.Println(v, ok)
+	m2 := map[int]func(op int) int{}
+	m2[1]=func ()  {
+		
+	}
+
+}
 func main() {
 	datatype()
 	operation()
 	circle()
 	playarray()
+	mapplay()
 }
